@@ -17,6 +17,7 @@ public class Interpreter implements Expr.Visitor<Object> {
         return expr.value;
     }
 
+    @SuppressWarnings("incomplete-switch")
     @Override
     public Object visitUnaryExpr(Expr.Unary expr) {
         Object right = evaluate(expr.right);
@@ -85,6 +86,7 @@ public class Interpreter implements Expr.Visitor<Object> {
         return expr.accept(this);
     }
 
+    @SuppressWarnings("incomplete-switch")
     @Override
     public Object visitBinaryExpr(Expr.Binary expr) {
         Object left = evaluate(expr.left);
@@ -134,7 +136,7 @@ public class Interpreter implements Expr.Visitor<Object> {
 
     @Override
     public Object visitSymbolExpr(Symbol expr) {
-        // TODO Auto-generated method stub
+        // Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'visitSymbolExpr'");
     }
 }
