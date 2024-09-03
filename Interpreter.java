@@ -1,7 +1,9 @@
 package himluck;
 
-import himluck.Expr.Symbol;
 import java.util.List;
+
+import himluck.Expr.Variable;
+import himluck.Stmt.Var;
 
 public class Interpreter implements Expr.Visitor<Object>,
         Stmt.Visitor<Void> {
@@ -156,8 +158,14 @@ public class Interpreter implements Expr.Visitor<Object>,
     }
 
     @Override
-    public Object visitSymbolExpr(Symbol expr) {
-        // Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'visitSymbolExpr'");
+    public Void visitVarStmt(Var stmt) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitVarStmt'");
+    }
+
+    @Override
+    public Object visitVariableExpr(Variable expr) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
     }
 }
