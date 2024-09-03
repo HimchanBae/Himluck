@@ -168,4 +168,10 @@ public class Interpreter implements Expr.Visitor<Object>,
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
     }
+
+    @Override
+    public Void visitExitStmt(Stmt.Exit stmt) {
+        System.exit(0);
+        return null;
+    }
 }

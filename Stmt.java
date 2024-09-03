@@ -21,6 +21,7 @@ abstract class Stmt {
         R visitVarStmt(Var stmt);
 
         // R visitWhileStmt(While stmt);
+        R visitExitStmt(Exit stmt);
     }
 
     // static class Block extends Stmt {
@@ -159,6 +160,13 @@ abstract class Stmt {
     // final Expr condition;
     // final Stmt body;
     // }
+
+    static class Exit extends Stmt {
+        @Override
+        <R> R accept(Visitor<R> visitor) {
+            return visitor.visitExitStmt(this);
+        }
+    }
 
     abstract <R> R accept(Visitor<R> visitor);
 }
