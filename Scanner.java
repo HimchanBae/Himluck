@@ -139,9 +139,7 @@ public class Scanner {
         while (isDigit(peek()))
             advance();
 
-        // 소수부를 피크한다
         if (peek() == '.' && isDigit(peekNext())) {
-            // "."을 소비한다
             advance();
 
             while (isDigit(peek()))
@@ -175,10 +173,8 @@ public class Scanner {
             return;
         }
 
-        // 닫는 큰따옴표
         advance();
 
-        // 앞뒤 큰따옴표 제거
         String value = source.substring(start + 1, current - 1);
         addToken(STRING, value);
     }

@@ -56,7 +56,6 @@ public class Himluck {
         Parser parser = new Parser(tokens);
         List<Stmt> statements = parser.parse();
 
-        // 오류가 발생한 경우 실행 중단
         if (hadError)
             return;
 
