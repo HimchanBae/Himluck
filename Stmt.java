@@ -1,10 +1,10 @@
 package himluck;
 
-// import java.util.List;
+import java.util.List;
 
 abstract class Stmt {
     interface Visitor<R> {
-        // R visitBlockStmt(Block stmt);
+        R visitBlockStmt(Block stmt);
 
         // R visitClassStmt(Class stmt);
 
@@ -24,18 +24,18 @@ abstract class Stmt {
         R visitExitStmt(Exit stmt);
     }
 
-    // static class Block extends Stmt {
-    // Block(List<Stmt> statements) {
-    // this.statements = statements;
-    // }
+    static class Block extends Stmt {
+        Block(List<Stmt> statements) {
+            this.statements = statements;
+        }
 
-    // @Override
-    // <R> R accept(Visitor<R> visitor) {
-    // return visitor.visitBlockStmt(this);
-    // }
+        @Override
+        <R> R accept(Visitor<R> visitor) {
+            return visitor.visitBlockStmt(this);
+        }
 
-    // final List<Stmt> statements;
-    // }
+        final List<Stmt> statements;
+    }
 
     // static class Class extends Stmt {
     // Class(Token name,

@@ -1,5 +1,6 @@
 package himluck;
 
+import himluck.Expr.Assign;
 import himluck.Expr.Variable;
 
 public class AstPrinter implements Expr.Visitor<String> {
@@ -46,5 +47,11 @@ public class AstPrinter implements Expr.Visitor<String> {
     public String visitVariableExpr(Variable expr) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
+    }
+
+    @Override
+    public String visitAssignExpr(Assign expr) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitAssignExpr'");
     }
 }
